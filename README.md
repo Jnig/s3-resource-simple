@@ -19,13 +19,17 @@ resources:
     access_key_id: {{aws-access-key}}
     secret_access_key: {{aws-secret-key}}
     bucket: {{aws-bucket}}
-    path: [<optional>, use to sync to a specific path of the bucket instead of root of bucket]
-    options: [<optional, see note below>]
 jobs:
 - name: <job name>
   plan:
   - <some Resource or Task that outputs files>
   - put: <resource name>
+    params:
+      path: [<optional>, use to sync to a specific path of the bucket instead of root of bucket]
+      options: [<optional, see note below>]
+      working_directory: [<optional>, use to sync a specific concourse output or directory to root of bucket]
+    get_params:
+      skip_download: true
 ```
 
 ## AWS Credentials

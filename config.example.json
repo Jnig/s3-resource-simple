@@ -3,6 +3,10 @@
     "access_key_id": "",
     "secret_access_key": "",
     "bucket": "",
-    "options": []
+  },
+  "params": {
+    "options": [],
+    "working_directory": "",
+    "skip_download": true
   }
 }
