@@ -1,6 +1,6 @@
 FROM python:3.5-alpine
 
-RUN apk add --update jq
+RUN apk add --update jq mailcap
 
 RUN pip install --upgrade pip
 RUN pip install --upgrade awscli
