@@ -42,4 +42,5 @@ echo "...done."
 
 timestamps=$(aws s3api list-objects --bucket $bucket --prefix "$path" --query 'Contents[].{LastModified: LastModified}')
 recent="$(echo $timestamps | jq -r 'max_by(.LastModified)')"
-echo "{\"version\": $recent}"
+
+(>&1 echo "{\"version\": $recent}")
