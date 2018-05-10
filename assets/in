@@ -39,7 +39,7 @@ fi
 echo "Downloading from S3..."
 eval aws s3 sync "s3://$bucket/$path" $dest $options
 echo "...done."
-echo "v2"
+echo "v3"
 
 timestamps=$(aws s3api list-objects --bucket $bucket --prefix "$path" --query 'Contents[].{LastModified: LastModified}')
 recent="$(echo $timestamps | jq -r 'max_by(.LastModified)')"
